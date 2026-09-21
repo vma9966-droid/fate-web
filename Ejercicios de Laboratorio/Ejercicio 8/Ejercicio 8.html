@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Video y audio</title>
+        <!-- Actualicé el icono para que use la misma imagen, o puedes regresar al de WhatsApp -->
+        <link rel="shortcut icon" href="fate-strange-fake-whispers-of-dawn-gilgamesh.avif">
+        <style>
+            body {
+                margin: 0;
+                background-color: #f4f4f9; 
+            }
+
+            .contenedor-centrado {
+                display: flex;
+                flex-direction: column;  
+                align-items: center;     
+                justify-content: center; 
+                min-height: 100vh;       
+                gap: 20px;               
+            }
+        </style>
+    </head>
+    <body>
+        <div class="contenedor-centrado">
+            <!-- El atributo poster ahora tiene el nombre exacto de tu archivo .avif -->
+            <video width="60%" height="auto" preload id="video" 
+                   poster="fate-strange-fake-whispers-of-dawn-gilgamesh.avif" 
+                   src="YTDown.com_YouTube_Gilgamesh-vs-Enkidu-Fate-strange-Fake-4K_Media_I-ypQw7v3_4_001_1080p.mp4" 
+                   controls></video>
+
+            <!-- Etiqueta de audio -->
+            <audio preload id="audio" 
+                   controls autoplay src="videoplayback.mp4"></audio>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emblema de la clase Archer">
+  <g fill="none" stroke="#c9a961" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 15 C15 40 15 60 30 85"/>
+    <line x1="30" y1="15" x2="78" y2="50"/>
+    <line x1="30" y1="85" x2="78" y2="50"/>
+    <line x1="18" y1="50" x2="82" y2="50"/>
+    <polygon points="82,50 70,44 70,56"/>
+  </g>
+</svg>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Victor Manuel San Martin Santes - 22480855">
+  <meta name="description" content="Ejemplos de las etiquetas video, audio e iframe de HTML5.">
+  <title>Fate | Multimedia</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-row">
+      <div class="brand"><img src="img/icon-saber.svg" alt="">FATE SERIES</div>
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="personajes.html">Servants</a></li>
+          <li><a href="multimedia.html" class="active">Multimedia</a></li>
+          <li><a href="formulario.html">Contrato de Master</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding:56px 0 24px;">
+      <div class="container">
+        <h1>Multimedia</h1>
+        <p>
+          Esta página reúne las etiquetas <code>&lt;video&gt;</code>,
+          <code>&lt;audio&gt;</code> e <code>&lt;iframe&gt;</code> de HTML5.
+        </p>
+      </div>
+    </section>
+
+    <section id="video-demo">
+      <div class="container">
+        <h2>Video Promocional</h2>
+        <p class="eyebrow-note">AMV promocional: The Beauty of Fate Series.</p>
+        <div class="media-block">
+          <video controls preload="none" poster="img/poster-video.jpg">
+            <source src="img/Fate-Series.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+          </video>
+          <p class="media-caption">"The Beauty of Fate Series" — Video promocional cargado desde la carpeta local.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="audio-demo">
+      <div class="container">
+        <h2>Soundtrack Promocional</h2>
+        <p class="eyebrow-note">Tema principal: Fate/strange Fake.</p>
+        <div class="media-block">
+          <audio controls preload="metadata">
+            <source src="img/STRANGEFAKE.mp3" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+          </audio>
+          <p class="media-caption">Fate/strange Fake OST — Pista de audio cargada desde la carpeta local.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="iframe-demo">
+      <div class="container">
+        <h2>Videos Promocionales de YouTube</h2>
+        <p class="eyebrow-note">
+          A continuación, videos relacionados con el universo Fate incrustados directamente desde YouTube.
+        </p>
+        
+        <!-- Primer video de YouTube -->
+        <div class="media-block">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/bhei2LVbqJM?si=HG8eHa0sFxnE39e3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="media-caption">Primer video reproducido directamente desde YouTube mediante la etiqueta iframe.</p>
+        </div>
+
+        <!-- Segundo video de YouTube -->
+        <div class="media-block" style="margin-top: 40px;">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/62hOiNH0K44?si=eRZ1wSGTEpKq6CzS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="media-caption">Segundo video reproducido directamente desde YouTube.</p>
+        </div>
+
+        <!-- Tercer video de YouTube (NUEVO) -->
+        <div class="media-block" style="margin-top: 40px;">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/or5A_ZzB6YI?si=YdrI-zMZ9zhn4JsN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <p class="media-caption">Tercer video reproducido directamente desde YouTube.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>Proyecto individual — HTML5 &amp; CSS3</span>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="index.html">Inicio</a> ·
+        <a href="personajes.html">Servants</a> ·
+        <a href="formulario.html">Contrato de Master</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

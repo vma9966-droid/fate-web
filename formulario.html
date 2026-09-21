@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Victor Manuel San Martin Santes - 22480855">
+  <meta name="description" content="Formulario de ejemplo: contrato de Master, con input text, radio, checkbox, select y button.">
+  <title>Fate | Contrato de Master</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-row">
+      <div class="brand"><img src="img/icon-saber.svg" alt="">FATE SERIES</div>
+      <nav class="menu" aria-label="Menú principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="personajes.html">Servants</a></li>
+          <li><a href="multimedia.html">Multimedia</a></li>
+          <li><a href="formulario.html" class="active">Contrato de Master</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding:56px 0 24px;">
+      <div class="container">
+        <h1>Contrato de Master</h1>
+        <p>Completa el formulario para "inscribirte" como Master de la Guerra del
+          Santo Grial. <u>Es un formulario de demostración</u>: no envía datos a
+          ningún servidor, solo muestra un mensaje de confirmación en pantalla.</p>
+      </div>
+    </section>
+
+    <section id="formulario">
+      <div class="container">
+        <form class="contract" id="contrato" action="#" method="get">
+
+          <div class="field">
+            <label for="nombre">Nombre de Master</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+          </div>
+
+          <div class="field">
+            <fieldset>
+              <legend>Clase de Servant favorita</legend>
+              <div class="option-row">
+                <input type="radio" id="clase-saber" name="clase" value="saber" checked>
+                <label for="clase-saber">Saber</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-archer" name="clase" value="archer">
+                <label for="clase-archer">Archer</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-lancer" name="clase" value="lancer">
+                <label for="clase-lancer">Lancer</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-rider" name="clase" value="rider">
+                <label for="clase-rider">Rider</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-caster" name="clase" value="caster">
+                <label for="clase-caster">Caster</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-assassin" name="clase" value="assassin">
+                <label for="clase-assassin">Assassin</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-berserker" name="clase" value="berserker">
+                <label for="clase-berserker">Berserker</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-ruler" name="clase" value="ruler">
+                <label for="clase-ruler">Ruler</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-avenger" name="clase" value="avenger">
+                <label for="clase-avenger">Avenger</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-mooncancer" name="clase" value="mooncancer">
+                <label for="clase-mooncancer">Moon Cancer</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-alterego" name="clase" value="alterego">
+                <label for="clase-alterego">Alter Ego</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-foreigner" name="clase" value="foreigner">
+                <label for="clase-foreigner">Foreigner</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-pretender" name="clase" value="pretender">
+                <label for="clase-pretender">Pretender</label>
+              </div>
+              <div class="option-row">
+                <input type="radio" id="clase-shielder" name="clase" value="shielder">
+                <label for="clase-shielder">Shielder</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="field">
+            <fieldset>
+              <legend>Series que has visto</legend>
+              <div class="option-row">
+                <input type="checkbox" id="serie-sn" name="series" value="stay-night">
+                <label for="serie-sn">Fate/stay night (2006)</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-ubw" name="series" value="ubw">
+                <label for="serie-ubw">Fate/stay night: Unlimited Blade Works</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-hf" name="series" value="heavens-feel">
+                <label for="serie-hf">Fate/stay night: Heaven's Feel</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-zero" name="series" value="zero">
+                <label for="serie-zero">Fate/Zero</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-apocrypha" name="series" value="apocrypha">
+                <label for="serie-apocrypha">Fate/Apocrypha</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-extra" name="series" value="extra-last-encore">
+                <label for="serie-extra">Fate/EXTRA Last Encore</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-fgo" name="series" value="grand-order">
+                <label for="serie-fgo">Fate/Grand Order (First Order, Babylonia, Camelot, Solomon)</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-strangefake" name="series" value="strange-fake">
+                <label for="serie-strangefake">Fate/strange Fake</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-prisma" name="series" value="prisma-illya">
+                <label for="serie-prisma">Fate/kaleid liner Prisma☆Illya</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-elmelloi" name="series" value="el-melloi">
+                <label for="serie-elmelloi">Lord El-Melloi II Case Files</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-prototype" name="series" value="prototype">
+                <label for="serie-prototype">Fate/Prototype</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-carnival" name="series" value="carnival-phantasm">
+                <label for="serie-carnival">Carnival Phantasm / Grand Carnival</label>
+              </div>
+              <div class="option-row">
+                <input type="checkbox" id="serie-emiya" name="series" value="emiya-gohan">
+                <label for="serie-emiya">Today's Menu for the Emiya Family</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="field">
+            <label for="rango">Rango de Master autoevaluado</label>
+            <select id="rango" name="rango">
+              <option value="s">Rango S — veterano</option>
+              <option value="a" selected>Rango A — con experiencia</option>
+              <option value="b">Rango B — aficionado</option>
+              <option value="c">Rango C — recién llegado</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit">Firmar contrato</button>
+
+          <p id="resultado" class="form-result" role="status"></p>
+        </form>
+
+        <!-- Sección del reproductor de audio al final del formulario -->
+        <div class="media-block" style="margin-top: 40px; max-width: 560px;">
+          <p class="eyebrow-note">Música ambiental del contrato:</p>
+          <audio id="bg-audio" controls autoplay loop preload="auto">
+            <source src="img/FsF-sABer.mp3" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
+          </audio>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>Proyecto individual — HTML5 &amp; CSS3</span>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="index.html">Inicio</a> ·
+        <a href="personajes.html">Servants</a> ·
+        <a href="multimedia.html">Multimedia</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Confirmación del formulario
+    document.getElementById('contrato').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nombre = document.getElementById('nombre').value || 'Master sin nombre';
+      var resultado = document.getElementById('resultado');
+      resultado.textContent = 'Contrato registrado, ' + nombre + '. La Guerra del Santo Grial dará inicio en breve.';
+      resultado.classList.add('visible');
+    });
+
+    // Intento de reproducción automática al cargar o interactuar con la página
+    window.addEventListener('DOMContentLoaded', function () {
+      var audio = document.getElementById('bg-audio');
+      
+      var playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function () {
+          // Si el navegador bloqueó el autoplay sin interacción, reproduce al primer clic/tecla
+          var enableAudio = function () {
+            audio.play();
+            document.removeEventListener('click', enableAudio);
+            document.removeEventListener('keydown', enableAudio);
+          };
+          document.addEventListener('click', enableAudio);
+          document.addEventListener('keydown', enableAudio);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

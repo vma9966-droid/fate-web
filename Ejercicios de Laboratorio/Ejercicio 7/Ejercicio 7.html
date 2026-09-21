@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+    <form action="mailto:vma9966@gmail.com" method="post" enctype="text/plain" id="form">
+        <fieldset>
+            <legend>Información Personal:</legend>
+            
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" id="nombre" placeholder="Escribe el nombre completo" maxlength="50" size="50">
+            <br><br>
+            
+            <label for="apellido">Apellidos:</label><br>
+            <input type="text" name="apellido" id="apellido" placeholder="Escribe los apellidos" maxlength="50" size="50">
+            <br><br>
+            
+            <input type="radio" name="genero" value="Hombre" id="hombre"> <label for="hombre">Hombre</label><br>
+            <input type="radio" name="genero" value="Mujer" id="mujer"> <label for="mujer">Mujer</label><br>
+            <input type="radio" name="genero" value="Otro" id="otro"> <label for="otro">Otro</label><br><br>
+            
+            <label for="municipio">Selecciona el municipio donde vives</label><br>
+            <select name="municipio" id="municipio" size="3">
+                <option value="1">Monterrey</option>
+                <option value="2">Apodaca</option>
+                <option value="3">Juárez</option>
+                <option value="4">Guadalupe</option>
+                <option value="5">San Nicolás</option>
+                <option value="6">Santa Catarina</option>
+            </select>
+            <br><br>
+            
+            Escribe tus ocupaciones <br>
+            <input type="checkbox" name="ocupacion" value="Estudiante" id="estudiante"> <label for="estudiante">Estudiante</label><br>
+            <input type="checkbox" name="ocupacion" value="Ama de casa" id="ama"> <label for="ama">Ama de casa</label><br>
+            <input type="checkbox" name="ocupacion" value="Trabajo" id="trabajo"> <label for="trabajo">Trabajo</label><br><br>
+            
+            <label for="comentarios">Escribe tus comentarios de la página</label><br>
+            <textarea name="comentarios" id="comentarios" rows="10" cols="30" placeholder="Aquí"></textarea>
+            <br><br>
+            
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+            <button type="button" onclick="alert('TE GANASTE UN IPHONE ')">DA CLIC</button>
+            <br><br>
+        </fieldset>
+    </form>
+</body>
+</html>

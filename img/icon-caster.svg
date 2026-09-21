@@ -1,0 +1,8 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Emblema de la clase Caster">
+  <g fill="none" stroke="#c9a961" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="50" y1="30" x2="50" y2="88"/>
+  </g>
+  <g fill="#c9a961">
+    <polygon points="50,8 57,24 74,24 60,35 65,52 50,42 35,52 40,35 26,24 43,24"/>
+  </g>
+</svg>
