@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Victor Manuel San Martin Santes - 22480855">
+  <title>Fate | Facturación del Carrito</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/tienda.js" defer></script>
+  <style>
+    /* Estilos específicos para la impresión de la factura */
+    @media print {
+      body { background: white; color: black; }
+      .site-header, .button-group { display: none !important; }
+      .contract { border: none; padding: 0; box-shadow: none; }
+      table { border: 1px solid #000; width: 100%; }
+      th, td { border: 1px solid #000; color: black !important; }
+    }
+  </style>
+</head>
+<body onload="cargarCarrito()">
+
+  <header class="site-header">
+    <div class="nav-row">
+      <div class="brand"><img src="img/icon-saber.svg" alt="">FATE SERIES</div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html">Catálogo</a></li>
+          <li><a href="carrito.html" class="active">Ver Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding:56px 0 24px;">
+      <div class="container">
+        <h1>Factura de Adquisición</h1>
+        <p>Resumen de los artefactos solicitados por el Master: <strong id="nombre-cliente" style="color: var(--gold);"></strong></p>
+      </div>
+    </section>
+
+    <section id="factura">
+      <div class="container">
+        
+        <div class="contract">
+          <h3>Detalle de la Orden</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Artículo</th>
+                  <th scope="col">Precio Unitario</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody id="cuerpo-carrito">
+                <!-- Los productos se inyectan aquí con JavaScript -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3" style="text-align: right; font-weight: bold;">TOTAL A PAGAR:</td>
+                  <td id="total-pagar" style="color: var(--gold); font-size: 1.2rem; font-weight: bold;">$0.00</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <!-- Botones de control -->
+          <div class="button-group" style="display: flex; gap: 12px; margin-top: 32px;">
+            <button class="submit" onclick="imprimirFactura()">Imprimir Factura</button>
+            <button class="submit" style="background: var(--line); color: var(--ink);" onclick="vaciarCarrito()">Vaciar Carrito</button>
+            <button class="submit" style="background: var(--bg-panel); border: 1px solid var(--gold); color: var(--gold);" onclick="window.location.href='tienda.html'">Seguir Comprando</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

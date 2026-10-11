@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Victor Manuel San Martin Santes - 22480855">
+  <title>Fate | Catálogo del Almacén</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/tienda.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-row">
+      <div class="brand"><img src="img/icon-saber.svg" alt="">FATE SERIES</div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="tienda.html" class="active">Catálogo</a></li>
+          <li><a href="carrito.html">Ver Carrito</a></li>
+          <li><a href="login.html">Cambiar Master</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding:56px 0 24px;">
+      <div class="container">
+        <h1>Suministros del Grial</h1>
+        <p>Selecciona los artefactos mágicos y la cantidad que deseas adquirir.</p>
+      </div>
+    </section>
+
+    <section id="catalogo">
+      <div class="container">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col" style="width: 15%;">Imagen</th>
+                <th scope="col" style="width: 45%;">Artefacto y Descripción</th>
+                <th scope="col" style="width: 15%;">Precio</th>
+                <th scope="col" style="width: 25%;">Control de compra</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <!-- Producto 1 -->
+              <tr>
+                <td><img src="img/cuarzo.png" alt="Saint Quartz" style="width: 80px; height: auto; border: 1px solid var(--line);"></td>
+                <td valign="top">
+                  <b>Saint Quartz (x30)</b><br>
+                  <span class="eyebrow-note">Cristales mágicos necesarios para invocar nuevos Servants. Paquete de invocación estándar.</span>
+                </td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$29.99</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <label for="cant-cuarzo" style="font-size: 0.8rem;">Cantidad:</label>
+                    <input type="number" id="cant-cuarzo" value="1" min="1" max="99" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Saint Quartz (x30)', 29.99, 'cant-cuarzo')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Producto 2 -->
+              <tr>
+                <td><img src="img/excalibur.png" alt="Réplica de Excalibur" style="width: 80px; height: auto; border: 1px solid var(--line);"></td>
+                <td valign="top">
+                  <b>Réplica: Excalibur</b><br>
+                  <span class="eyebrow-note">Espada de la Victoria Prometida a escala 1:1. Forjada en metal resistente, ideal para exhibición.</span>
+                </td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$150.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <label for="cant-espada" style="font-size: 0.8rem;">Cantidad:</label>
+                    <input type="number" id="cant-espada" value="1" min="1" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Réplica: Excalibur', 150.00, 'cant-espada')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Producto 3 -->
+              <tr>
+                <td><img src="img/grial.png" alt="Santo Grial" style="width: 80px; height: auto; border: 1px solid var(--line);"></td>
+                <td valign="top">
+                  <b>Santo Grial Oscuro</b><br>
+                  <span class="eyebrow-note">Un contenedor corrompido que emana una densa energía oscura. Consúmase bajo su propio riesgo.</span>
+                </td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$999.50</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <label for="cant-grial" style="font-size: 0.8rem;">Cantidad:</label>
+                    <input type="number" id="cant-grial" value="1" min="1" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Santo Grial Oscuro', 999.50, 'cant-grial')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

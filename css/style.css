@@ -289,7 +289,7 @@ tbody tr:hover { background: rgba(201, 169, 97, 0.06); }
   margin-top: 24px;
 }
 
-video, audio, iframe {
+video, audio, ifra  me {
   width: 100%;
   background: #000;
   border: 1px solid var(--line);
