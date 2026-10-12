@@ -15,7 +15,7 @@ function verificarSesion() {
 verificarSesion();
 
 // ==========================================
-// FUNCIONES DE LOGIN Y REGISTRO
+// FUNCIONES DE LOGIN, REGISTRO Y SESIÓN
 // ==========================================
 
 function mostrarRegistro() {
@@ -47,13 +47,11 @@ function registrarUsuario(event) {
     const pass = document.getElementById("reg-password").value;
 
     if (usuario && pass) {
-        // Traemos la "base de datos" de LocalStorage o creamos una vacía si no existe
         let usuariosBD = JSON.parse(localStorage.getItem("fate_usuarios_bd")) || {};
         
         if (usuariosBD[usuario]) {
             alert("Este usuario ya existe. Por favor, elige otro nombre.");
         } else {
-            // Guardamos la contraseña asociada al usuario
             usuariosBD[usuario] = pass;
             localStorage.setItem("fate_usuarios_bd", JSON.stringify(usuariosBD));
             
@@ -72,16 +70,21 @@ function iniciarSesion(event) {
 
     let usuariosBD = JSON.parse(localStorage.getItem("fate_usuarios_bd")) || {};
 
-    // Validaciones
     if (!usuariosBD[usuario]) {
         alert("El usuario ingresado no existe. Por favor ve a 'Registrarse' para crear una cuenta.");
     } else if (usuariosBD[usuario] !== pass) {
         alert("La contraseña es incorrecta. Inténtalo nuevamente.");
     } else {
-        // Si todo es correcto
         localStorage.setItem("fate_user", usuario);
         alert("Login es correcto. ¡Bienvenido Master " + usuario + "!");
         window.location.href = "tienda.html"; 
+    }
+}
+
+function cerrarSesion() {
+    if(confirm("¿Estás seguro de que deseas cerrar tu sesión de Master?")) {
+        localStorage.removeItem("fate_user"); // Borramos el usuario activo, pero conservamos el carrito en localStorage
+        window.location.href = "login.html";
     }
 }
 
@@ -105,8 +108,11 @@ function agregarAlCarrito(nombreProducto, precio, idInputCantidad) {
 
         localStorage.setItem("fate_carrito", JSON.stringify(carrito));
         alert("Se agregaron " + cantidad + " unidad(es) de " + nombreProducto + " a tu carrito.");
+        
+        // Opcional: Reiniciar el input a 0 después de agregar
+        document.getElementById(idInputCantidad).value = 0;
     } else {
-        alert("Por favor ingresa una cantidad válida.");
+        alert("Por favor ingresa una cantidad válida mayor a 0.");
     }
 }
 
@@ -116,7 +122,6 @@ function cargarCarrito() {
     const carrito = JSON.parse(localStorage.getItem("fate_carrito")) || [];
     const usuario = localStorage.getItem("fate_user") || "Master Desconocido";
     
-    // Solo intenta modificar los elementos si estamos en la página del carrito
     if (document.getElementById("nombre-cliente")) {
         document.getElementById("nombre-cliente").textContent = usuario;
         let totalGral = 0;

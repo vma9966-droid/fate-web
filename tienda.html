@@ -9,6 +9,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/tienda.js" defer></script>
+  <style>
+    .categoria-titulo {
+      color: var(--gold);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      margin-top: 48px;
+      margin-bottom: 24px;
+      font-family: 'Cinzel', serif;
+    }
+    .img-catalogo {
+      width: 80px; 
+      height: 80px; 
+      object-fit: cover; 
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,9 +35,11 @@
       <nav class="menu">
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="tienda.html" class="active">Catálogo</a></li>
-          <li><a href="carrito.html">Ver Carrito</a></li>
-          <li><a href="login.html">Cambiar Master</a></li>
+          <li><a href="personajes.html">Servants</a></li>
+          <li><a href="multimedia.html">Multimedia</a></li>
+          <li><a href="formulario.html">Contrato de Master</a></li>
+          <li><a href="carrito.html" class="active" style="color: var(--gold); font-weight: 600;">Ver Carrito / Pagar</a></li>
+          <li><a href="#" onclick="cerrarSesion()" style="color: #ff4d4d;">Cerrar Sesión</a></li>
         </ul>
       </nav>
     </div>
@@ -30,81 +49,445 @@
     <section class="hero" style="padding:56px 0 24px;">
       <div class="container">
         <h1>Suministros del Grial</h1>
-        <p>Selecciona los artefactos mágicos y la cantidad que deseas adquirir.</p>
+        <p>Selecciona los artefactos mágicos, coleccionables y la cantidad que deseas adquirir.</p>
       </div>
     </section>
 
     <section id="catalogo">
       <div class="container">
+
+        <!-- ================= CATEGORÍA: LLAVEROS ================= -->
+        <h2 class="categoria-titulo">Llaveros y Acrílicos</h2>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
                 <th scope="col" style="width: 15%;">Imagen</th>
-                <th scope="col" style="width: 45%;">Artefacto y Descripción</th>
+                <th scope="col" style="width: 45%;">Artefacto</th>
                 <th scope="col" style="width: 15%;">Precio</th>
                 <th scope="col" style="width: 25%;">Control de compra</th>
               </tr>
             </thead>
             <tbody>
-              
-              <!-- Producto 1 -->
               <tr>
-                <td><img src="img/cuarzo.png" alt="Saint Quartz" style="width: 80px; height: auto; border: 1px solid var(--line);"></td>
-                <td valign="top">
-                  <b>Saint Quartz (x30)</b><br>
-                  <span class="eyebrow-note">Cristales mágicos necesarios para invocar nuevos Servants. Paquete de invocación estándar.</span>
-                </td>
-                <td valign="top" style="color: var(--gold); font-weight: 500;">$29.99</td>
+                <td><img src="img/Llaveros/FateGrand Order Rubber Strap 2 piezas set.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Rubber Strap 2 piezas set</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$15.00</td>
                 <td valign="top">
                   <div class="field" style="margin-bottom: 0;">
-                    <label for="cant-cuarzo" style="font-size: 0.8rem;">Cantidad:</label>
-                    <input type="number" id="cant-cuarzo" value="1" min="1" max="99" style="width: 60px; margin-bottom: 8px;">
-                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Saint Quartz (x30)', 29.99, 'cant-cuarzo')">Agregar</button>
+                    <input type="number" id="cant-llav1" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Rubber Strap 2 piezas set', 15.00, 'cant-llav1')">Agregar</button>
                   </div>
                 </td>
               </tr>
-
-              <!-- Producto 2 -->
               <tr>
-                <td><img src="img/excalibur.png" alt="Réplica de Excalibur" style="width: 80px; height: auto; border: 1px solid var(--line);"></td>
-                <td valign="top">
-                  <b>Réplica: Excalibur</b><br>
-                  <span class="eyebrow-note">Espada de la Victoria Prometida a escala 1:1. Forjada en metal resistente, ideal para exhibición.</span>
-                </td>
-                <td valign="top" style="color: var(--gold); font-weight: 500;">$150.00</td>
+                <td><img src="img/Llaveros/Shanghai CC FateGrand Order acrílico Gilgamesh.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Shanghai CC FateGrand Order acrílico Gilgamesh</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$12.50</td>
                 <td valign="top">
                   <div class="field" style="margin-bottom: 0;">
-                    <label for="cant-espada" style="font-size: 0.8rem;">Cantidad:</label>
-                    <input type="number" id="cant-espada" value="1" min="1" max="10" style="width: 60px; margin-bottom: 8px;">
-                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Réplica: Excalibur', 150.00, 'cant-espada')">Agregar</button>
+                    <input type="number" id="cant-llav2" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Shanghai CC FateGrand Order acrílico Gilgamesh', 12.50, 'cant-llav2')">Agregar</button>
                   </div>
                 </td>
               </tr>
-
-              <!-- Producto 3 -->
               <tr>
-                <td><img src="img/grial.png" alt="Santo Grial" style="width: 80px; height: auto; border: 1px solid var(--line);"></td>
-                <td valign="top">
-                  <b>Santo Grial Oscuro</b><br>
-                  <span class="eyebrow-note">Un contenedor corrompido que emana una densa energía oscura. Consúmase bajo su propio riesgo.</span>
-                </td>
-                <td valign="top" style="color: var(--gold); font-weight: 500;">$999.50</td>
+                <td><img src="img/Llaveros/Shanghai CC FateGran Orden Acrílico Altria.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Shanghai CC FateGran Orden Acrílico Altria</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$12.50</td>
                 <td valign="top">
                   <div class="field" style="margin-bottom: 0;">
-                    <label for="cant-grial" style="font-size: 0.8rem;">Cantidad:</label>
-                    <input type="number" id="cant-grial" value="1" min="1" max="5" style="width: 60px; margin-bottom: 8px;">
-                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Santo Grial Oscuro', 999.50, 'cant-grial')">Agregar</button>
+                    <input type="number" id="cant-llav3" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Shanghai CC FateGran Orden Acrílico Altria', 12.50, 'cant-llav3')">Agregar</button>
                   </div>
                 </td>
               </tr>
-
+              <tr>
+                <td><img src="img/Llaveros/Shanghai CC FateGrand Order acrílico Emiya.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Shanghai CC FateGrand Order acrílico Emiya</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$12.50</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-llav4" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Shanghai CC FateGrand Order acrílico Emiya', 12.50, 'cant-llav4')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Llaveros/Shanghai CC FateGrand Order acrílico Jeanne.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Shanghai CC FateGrand Order acrílico Jeanne</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$12.50</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-llav5" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Shanghai CC FateGrand Order acrílico Jeanne', 12.50, 'cant-llav5')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Llaveros/Shanghai CC FateGran Orden Acrílico Mashu.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Shanghai CC FateGran Orden Acrílico Mashu</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$12.50</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-llav6" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Shanghai CC FateGran Orden Acrílico Mashu', 12.50, 'cant-llav6')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Llaveros/Barvan Mar SD Mini Acrílico Mascot FateGrand Order.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Barvan Mar SD Mini Acrílico Mascot FateGrand Order</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$10.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-llav7" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Barvan Mar SD Mini Acrílico Mascot FateGrand Order', 10.00, 'cant-llav7')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Llaveros/Mélusine SD Mini Acrílico Mascot FateGrand Order.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Mélusine SD Mini Acrílico Mascot FateGrand Order</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$10.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-llav8" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Mélusine SD Mini Acrílico Mascot FateGrand Order', 10.00, 'cant-llav8')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Llaveros/Llavero Fate FGO Gutako Saber Altria Aichi Limited.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Llavero Fate FGO Gutako Saber Altria Aichi Limited</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$14.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-llav9" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Llavero Fate FGO Gutako Saber Altria Aichi Limited', 14.00, 'cant-llav9')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Llaveros/FateGrand Order Kyun Chara Correa de caucho.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Kyun Chara Correa de caucho</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$8.50</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-llav10" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Kyun Chara Correa de caucho', 8.50, 'cant-llav10')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
+
+
+        <!-- ================= CATEGORÍA: FIGURAS ================= -->
+        <h2 class="categoria-titulo">Figuras Coleccionables</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col" style="width: 15%;">Imagen</th>
+                <th scope="col" style="width: 45%;">Artefacto</th>
+                <th scope="col" style="width: 15%;">Precio</th>
+                <th scope="col" style="width: 25%;">Control de compra</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="img/Figuras/Kotobukiya FateGrand Order AssassinMystery Heroine X.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Kotobukiya FateGrand Order AssassinMystery Heroine X</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$145.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig1" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Kotobukiya FateGrand Order AssassinMystery Heroine X', 145.00, 'cant-fig1')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Figuras/FateGrand Order SaverArtoria Pendragon [Lily]-Heroic Spirit Festival Attire Ver. Figura escala 17.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order SaverArtoria Pendragon [Lily]-Heroic Spirit Festival Attire Ver. Figura escala 17</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$180.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig2" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order SaverArtoria Pendragon [Lily] Festival Attire Ver.', 180.00, 'cant-fig2')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Figuras/Nendoroid FateGrand Order Miyamoto Musashi.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Nendoroid FateGrand Order Miyamoto Musashi</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$55.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig3" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Nendoroid FateGrand Order Miyamoto Musashi', 55.00, 'cant-fig3')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Figuras/FateGrand Order Miyamoto Musashi 17 Figura Completa Primera Edición.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Miyamoto Musashi 17 Figura Completa Primera Edición</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$210.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig4" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Miyamoto Musashi 1/7 Primera Edición', 210.00, 'cant-fig4')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Figuras/Nendoroid CasterZhuge Kung Ming FateGrand Order.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Nendoroid CasterZhuge Kung Ming FateGrand Order</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$50.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig5" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Nendoroid CasterZhuge Kung Ming FateGrand Order', 50.00, 'cant-fig5')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Figuras/Fate Grand Order Okita Souji.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Fate Grand Order Okita Souji</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$165.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig6" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Fate Grand Order Okita Souji', 165.00, 'cant-fig6')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Figuras/FateGrand Order Figura Ozymandías.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Figura Ozymandías</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$130.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig7" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Figura Ozymandías', 130.00, 'cant-fig7')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Figuras/Figura FateGrand Order Lancer Caenis.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Figura FateGrand Order Lancer Caenis</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$190.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig8" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Figura FateGrand Order Lancer Caenis', 190.00, 'cant-fig8')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Figuras/Fate Grand Order SaberArtoria Pendragon Escala.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Fate Grand Order SaberArtoria Pendragon Escala</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$250.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig9" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Fate Grand Order SaberArtoria Pendragon Escala', 250.00, 'cant-fig9')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Figuras/Saber Altria Pendragon [Lily].jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Saber Altria Pendragon [Lily]</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$140.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-fig10" value="0" min="0" max="5" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Saber Altria Pendragon [Lily]', 140.00, 'cant-fig10')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <!-- ================= CATEGORÍA: PELUCHES ================= -->
+        <h2 class="categoria-titulo">Peluches Chibi-gurumi</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col" style="width: 15%;">Imagen</th>
+                <th scope="col" style="width: 45%;">Artefacto</th>
+                <th scope="col" style="width: 15%;">Precio</th>
+                <th scope="col" style="width: 25%;">Control de compra</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="img/Peluches/Fgo Oberon Traje de baño Chibi.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Fgo Oberon Traje de baño Chibi</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$25.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-pel1" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Fgo Oberon Traje de baño Chibi', 25.00, 'cant-pel1')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Peluches/FateGrand Order Chibi Plush Vol. 2 La heroína Gudako.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Chibi Plush Vol. 2 La heroína Gudako</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$22.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-pel2" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Chibi Plush Vol. 2 La heroína Gudako', 22.00, 'cant-pel2')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Peluches/FateGrand Order Chibi-gurumi vol.6 Skady.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Chibi-gurumi vol.6 Skady</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$25.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-pel3" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Chibi-gurumi vol.6 Skady', 25.00, 'cant-pel3')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Peluches/Morgan FateGran Orden Chiigurumi FGO.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Morgan FateGran Orden Chiigurumi FGO</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$25.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-pel4" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Morgan FateGran Orden Chiigurumi FGO', 25.00, 'cant-pel4')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Peluches/FateGrand Order Chibi-gurumi vol.1 Oda Nobunaga 1.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Chibi-gurumi vol.1 Oda Nobunaga 1</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$25.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-pel5" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Chibi-gurumi vol.1 Oda Nobunaga 1', 25.00, 'cant-pel5')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Peluches/FateGrand Order Chibi Plush Vol. 13 Jeanne d'Arc.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Chibi Plush Vol. 13 Jeanne d'Arc</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$25.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-pel6" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Chibi Plush Vol. 13 Jeanne dArc', 25.00, 'cant-pel6')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Peluches/FateGrand Order Chibi Plush Vol. 13 Edmond Dantès.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Chibi Plush Vol. 13 Edmond Dantès</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$25.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-pel7" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Chibi Plush Vol. 13 Edmond Dantès', 25.00, 'cant-pel7')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Peluches/FateGrand Order Chibi-gurumi Altria Caster vol.3.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order Chibi-gurumi Altria Caster vol.3</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$25.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-pel8" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order Chibi-gurumi Altria Caster vol.3', 25.00, 'cant-pel8')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/Peluches/Fate Grand Order Chibi Plush Muramasa Saber.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>Fate Grand Order Chibi Plush Muramasa Saber</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$25.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-pel9" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('Fate Grand Order Chibi Plush Muramasa Saber', 25.00, 'cant-pel9')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <!-- ================= CATEGORÍA: DVD Y MÚSICA ================= -->
+        <h2 class="categoria-titulo">Música y DVD</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col" style="width: 15%;">Imagen</th>
+                <th scope="col" style="width: 45%;">Artefacto</th>
+                <th scope="col" style="width: 15%;">Precio</th>
+                <th scope="col" style="width: 25%;">Control de compra</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="img/DVD/CD de música del juego FateGrand Order Original Soundtrack III.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>CD de música del juego FateGrand Order Original Soundtrack III</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$35.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-dvd1" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('CD de música del juego FateGrand Order Original Soundtrack III', 35.00, 'cant-dvd1')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="img/DVD/FateGrand Order THE STAGE.jpg" class="img-catalogo"></td>
+                <td valign="top"><b>FateGrand Order THE STAGE</b></td>
+                <td valign="top" style="color: var(--gold); font-weight: 500;">$40.00</td>
+                <td valign="top">
+                  <div class="field" style="margin-bottom: 0;">
+                    <input type="number" id="cant-dvd2" value="0" min="0" max="10" style="width: 60px; margin-bottom: 8px;">
+                    <button class="submit" style="padding: 6px 12px; font-size: 0.85rem;" onclick="agregarAlCarrito('FateGrand Order THE STAGE', 40.00, 'cant-dvd2')">Agregar</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ================= BOTÓN FINAL DE IR AL CARRITO ================= -->
+        <div style="text-align: center; margin-top: 48px; margin-bottom: 24px;">
+          <a href="carrito.html" class="submit" style="font-size: 1.2rem; padding: 16px 32px; text-decoration: none; display: inline-block; background-color: var(--gold); color: #000;">🛒 Ir al Carrito a Pagar</a>
+        </div>
+
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>Proyecto individual — HTML5 &amp; CSS3</span>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="index.html">Inicio</a> ·
+        <a href="personajes.html">Servants</a> ·
+        <a href="multimedia.html">Multimedia</a> ·
+        <a href="formulario.html">Contrato de Master</a>
+      </nav>
+    </div>
+  </footer>
 
 </body>
 </html>
