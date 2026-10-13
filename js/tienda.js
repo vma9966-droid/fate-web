@@ -83,7 +83,7 @@ function iniciarSesion(event) {
 
 function cerrarSesion() {
     if(confirm("¿Estás seguro de que deseas cerrar tu sesión de Master?")) {
-        localStorage.removeItem("fate_user"); // Borramos el usuario activo, pero conservamos el carrito en localStorage
+        localStorage.removeItem("fate_user"); 
         window.location.href = "login.html";
     }
 }
@@ -107,9 +107,9 @@ function agregarAlCarrito(nombreProducto, precio, idInputCantidad) {
         });
 
         localStorage.setItem("fate_carrito", JSON.stringify(carrito));
+        // Mensaje de alerta actualizado
         alert("Se agregaron " + cantidad + " unidad(es) de " + nombreProducto + " a tu carrito.");
         
-        // Opcional: Reiniciar el input a 0 después de agregar
         document.getElementById(idInputCantidad).value = 0;
     } else {
         alert("Por favor ingresa una cantidad válida mayor a 0.");
@@ -132,17 +132,19 @@ function cargarCarrito() {
         } else {
             carrito.forEach((item) => {
                 totalGral += item.subtotal;
+                // Formateo con la leyenda MXN
                 cuerpoTabla.innerHTML += `
                     <tr>
                         <td>${item.producto}</td>
-                        <td>$${item.precio.toFixed(2)}</td>
+                        <td>$${item.precio.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN</td>
                         <td>${item.cantidad}</td>
-                        <td style="color: var(--gold); font-weight: bold;">$${item.subtotal.toFixed(2)}</td>
+                        <td style="color: var(--gold); font-weight: bold;">$${item.subtotal.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2})} MXN</td>
                     </tr>
                 `;
             });
         }
-        totalElemento.textContent = "$" + totalGral.toFixed(2);
+        // Total global con la leyenda MXN
+        totalElemento.textContent = "$" + totalGral.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " MXN";
     }
 }
 
