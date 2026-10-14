@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!--
+    Encabezado del documento HTML
+  -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Victor Manuel San Martin Santes - 22480855">
@@ -9,8 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/tienda.js" defer></script>
+
+  <!--
+    Estilos específicos para la impresión de la factura.
+    Cuando el usuario imprime la página, se eliminan elementos de navegación,
+    se simplifica el diseño y la tabla se muestra con bordes negros para que
+    la factura tenga un formato más parecido a una hoja de compra.
+  -->
   <style>
-    /* Estilos específicos para la impresión de la factura */
     @media print {
       body { background: white; color: black; }
       .site-header, .button-group { display: none !important; }
@@ -22,6 +31,11 @@
 </head>
 <body onload="cargarCarrito()">
 
+  <!--
+    Cabecera principal de la pagina web.
+    Muestra la marca del proyecto y el menú de navegación para moverse
+    entre Inicio, Tienda y el carrito disponible para el usuario.
+  -->
   <header class="site-header">
     <div class="nav-row">
       <div class="brand"><img src="img/icon-saber.svg" alt="">FATE SERIES</div>
@@ -37,6 +51,11 @@
   </header>
 
   <main>
+    <!--
+      Sección de resumen del pedido.
+      Aquí se muestra el título de la factura y el nombre del cliente activo,
+      obtenido desde localStorage mediante la función cargarCarrito().
+    -->
     <section class="hero" style="padding:56px 0 24px;">
       <div class="container">
         <h1>Factura de Adquisición</h1>
@@ -47,6 +66,11 @@
     <section id="factura">
       <div class="container">
         
+        <!--
+          Contenedor principal de la factura.
+          Incluye la tabla con los artículos agregados al carrito, la cantidad,
+          el precio unitario, subtotal y el total a pagar.
+        -->
         <div class="contract">
           <h3>Detalle de la Orden</h3>
           <div class="table-wrap">
@@ -60,7 +84,7 @@
                 </tr>
               </thead>
               <tbody id="cuerpo-carrito">
-                <!-- Los productos se inyectan aquí con JavaScript -->
+                <!-- Los productos se inyectan desde JavaScript -->
               </tbody>
               <tfoot>
                 <tr>
@@ -71,7 +95,11 @@
             </table>
           </div>
 
-          <!-- Botones de control -->
+          <!--
+            Botones de control del carrito.
+            Permiten imprimir la factura, vaciar el contenido actual o regresar
+            a la tienda para seguir agregando productos.
+          -->
           <div class="button-group" style="display: flex; gap: 12px; margin-top: 32px;">
             <button class="submit" onclick="imprimirFactura()">Imprimir Factura</button>
             <button class="submit" style="background: var(--line); color: var(--ink);" onclick="vaciarCarrito()">Vaciar Carrito</button>
