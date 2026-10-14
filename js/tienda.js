@@ -1,17 +1,14 @@
-// js/tienda.js
-// Script principal para la autenticación, la gestión de sesión y el carrito de compras
-// del proyecto Fate Web. Este archivo se encarga de controlar el acceso a la tienda,
-// registrar usuarios, iniciar sesión y manejar los productos seleccionados por el cliente.
-
 // 0. VERIFICACIÓN DE SEGURIDAD
 // Comprueba si el usuario ha iniciado sesión antes de permitirle entrar a páginas
-// restringidas como tienda.html o carrito.html. Si no existe una sesión activa,
+//  Si no existe una sesión activa,
 // se redirige al login para proteger el acceso.
+
 function verificarSesion() {
     const usuarioActivo = localStorage.getItem("fate_user");
     const rutaActual = window.location.pathname;
 
     // Si intenta entrar a la tienda o carrito sin haberse logueado
+
     if (!usuarioActivo && (rutaActual.includes("tienda.html") || rutaActual.includes("carrito.html"))) {
         alert("Acceso denegado. Debes registrarte e iniciar sesión para acceder al Almacén Mágico.");
         window.location.href = "login.html";
@@ -56,6 +53,7 @@ function togglePassword(inputId) {
 
 // Registrar un nuevo usuario en la base local del navegador.
 // Se almacena una estructura en localStorage con el formato { usuario: password }.
+
 function registrarUsuario(event) {
     event.preventDefault(); // Evita que el formulario se envíe y recargue la página
     const usuario = document.getElementById("reg-username").value.trim();
@@ -64,11 +62,15 @@ function registrarUsuario(event) {
     // Validamos que el usuario y la contraseña no estén vacíos antes de guardar
     if (usuario && pass) {
         let usuariosBD = JSON.parse(localStorage.getItem("fate_usuarios_bd")) || {};
+
     // Recuperamos la base de datos de usuarios desde localStorage o 
     // inicializamos un objeto vacío
+
         if (usuariosBD[usuario]) {
             alert("Este usuario ya existe. Por favor, elige otro nombre.");
         } else {
+
+
             usuariosBD[usuario] = pass;
             // Guardamos la base de datos actualizada en localStorage
             localStorage.setItem("fate_usuarios_bd", JSON.stringify(usuariosBD));
@@ -83,6 +85,7 @@ function registrarUsuario(event) {
 }
 
 // Inicia sesión validando las credenciales del usuario contra la base local.
+
 // Si todo es correcto, se guarda el usuario activo en localStorage.
 function iniciarSesion(event) {
     event.preventDefault();
@@ -114,11 +117,13 @@ function cerrarSesion() {
 // ==========================================
 // FUNCIONES DEL CARRITO DE COMPRAS
 // ==========================================
+
 // El carrito se guarda en localStorage para conservar los productos agregados
 // aunque el usuario recargue la página o regrese a la tienda.
 
 // Agrega un producto al carrito tomando el nombre, el precio y la cantidad indicada
 // en el input correspondiente en la vista de la tienda.
+
 function agregarAlCarrito(nombreProducto, precio, idInputCantidad) {
     const cantidad = parseInt(document.getElementById(idInputCantidad).value);
 
@@ -129,6 +134,8 @@ function agregarAlCarrito(nombreProducto, precio, idInputCantidad) {
             producto: nombreProducto,
             precio: parseFloat(precio),
             cantidad: cantidad,
+
+            // Calculamos el subtotal multiplicando el precio por la cantidad
             subtotal: parseFloat(precio) * cantidad
         });
 
@@ -146,11 +153,12 @@ function agregarAlCarrito(nombreProducto, precio, idInputCantidad) {
 
 // Carga el contenido del carrito en la tabla del HTML, muestra el nombre del usuario activo
 // y calcula el total general en MXN para mostrarlo al cliente.
+
 function cargarCarrito() {
     const cuerpoTabla = document.getElementById("cuerpo-carrito");
     const totalElemento = document.getElementById("total-pagar");
-    const carrito = JSON.parse(localStorage.getItem("fate_carrito")) || [];
-    const usuario = localStorage.getItem("fate_user") || "Master Desconocido";
+    const carrito = JSON.parse(localStorage.getItem("fate_carrito")) || [];     //En local storage se guarda el carrito de compras del usuario activo
+    const usuario = localStorage.getItem("fate_user") || "Master Desconocido"; // En local storage se guarda el nombre del usuario activo
 
     if (document.getElementById("nombre-cliente")) {
         document.getElementById("nombre-cliente").textContent = usuario;
@@ -173,7 +181,7 @@ function cargarCarrito() {
                 `;
             });
         }
-        // Total global con la leyenda MXN
+        // Suma Total general en pesos MXN
         totalElemento.textContent = "$" + totalGral.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " MXN";
     }
 }

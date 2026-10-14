@@ -42,13 +42,17 @@
         <div id="login-container">
           <form class="contract" onsubmit="iniciarSesion(event)">
             <div class="field">
+
               <label for="username">Usuario (Nombre de Master)</label>
-              <input type="text" id="username" placeholder="Ingresa tu usuario" required>
+              <!-- Límite de 10 caracteres -->
+              <input type="text" id="username" placeholder="Ingresa tu usuario" maxlength="10" required>
             </div>
             
             <div class="field" style="margin-bottom: 8px;">
+
               <label for="password">Contraseña (Sello de Comando)</label>
-              <input type="password" id="password" placeholder="••••••••" required>
+              <!-- Límite de 10 caracteres -->
+              <input type="password" id="password" placeholder="••••••••" maxlength="10" required>
             </div>
 
             <!-- Checkbox Mostrar Contraseña -->
@@ -64,17 +68,21 @@
           </form>
         </div>
 
-        <!-- VISTA DE REGISTRO (Oculta por defecto) -->
+        <!-- VISTA DE REGISTRO  -->
         <div id="register-container" style="display: none;">
           <form class="contract" onsubmit="registrarUsuario(event)">
             <div class="field">
+
               <label for="reg-username">Nuevo Usuario</label>
-              <input type="text" id="reg-username" placeholder="Crea un nombre de usuario" required>
+              <!-- Límite de 10 caracteres agregado aquí -->
+              <input type="text" id="reg-username" placeholder="Crea un nombre de usuario" maxlength="10" required>
             </div>
             
             <div class="field" style="margin-bottom: 8px;">
+              
               <label for="reg-password">Nueva Contraseña</label>
-              <input type="password" id="reg-password" placeholder="Crea una contraseña" required>
+              <!-- Límite de 10 caracteres agregado aquí -->
+              <input type="password" id="reg-password" placeholder="Crea una contraseña" maxlength="10" required>
             </div>
 
             <!-- Checkbox Mostrar Contraseña -->
